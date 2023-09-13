@@ -1,14 +1,11 @@
 #!/usr/bin/env
 def fibonacci_sequence(n):
-    if n <= 0:
-        return []
-    elif n == 1:
-        return [0]
-
-    fibonacci_list = [0, 1]
-
-    for i in range(4):
-        next_fibonacci = fibonacci_list[-1] + fibonacci_list[-2]
-        fibonacci_list.append(next_fibonacci)
-
-    return fibonacci_list
+    fibo = []
+    sum = 0
+    for i in range(0, n):
+        if i < 2:
+            fibo.append(i)
+        else:
+            sum = fibo[i-2]+fibo[i-1]
+            fibo.append(sum)
+    return fibo
