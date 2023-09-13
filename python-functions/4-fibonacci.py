@@ -7,7 +7,7 @@ def fibonacci_sequence(n):
 
     fibonacci_list = [0, 1]
 
-    for i in range(5):
+    for i in range(4):
         next_fibonacci = fibonacci_list[-1] + fibonacci_list[-2]
         fibonacci_list.append(next_fibonacci)
 
