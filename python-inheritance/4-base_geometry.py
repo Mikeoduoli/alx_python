@@ -1,17 +1,29 @@
-#!/usr/bin/python3
 """
-    Represents a BaseGeometry.
+Your module documentation goes here
 """
 
 
-class BaseGeometry:
+class MetaClass(type):
     """
-    A base class for geometry-related operations.
+    documentation
+    """
+    def __dir__(cls):
+        return [attribute for attribute in super().__dir__() if attribute != '__init_subclass__']
 
+
+class BaseGeometry(metaclass=MetaClass):
     """
+    documentation for class goes here
+    """
+
+    def __dir__(cls):
+        return [attribute for attribute in super().__dir__() if attribute != '__init_subclass__']
 
     def area(self):
         """
-         Exception Indicates that the method is not implemented.
+        Calculates the area and raises an exception.
+
+        Raises:
+            Exception: Always raises an exception.
         """
         raise Exception("area() is not implemented")
