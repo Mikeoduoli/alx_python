@@ -1,9 +1,20 @@
-#!/usr/bin/python3
 """
-Module consists of an empty class BaseGeometry.
+Your module documentation goes here
 """
 
 
-class BaseGeometry:
-    """An empty class"""
-    pass
+class MetaClass(type):
+    """
+    documentation
+    """
+    def __dir__(cls):
+        return [attribute for attribute in super().__dir__() if attribute != '__init_subclass__']
+
+
+class BaseGeometry(metaclass=MetaClass):
+    """
+    documentation for class goes here
+    """
+
+    def __dir__(cls):
+        return [attribute for attribute in super().__dir__() if attribute != '__init_subclass__']
